@@ -21,3 +21,17 @@ model User{
 }
 
 
+model Summary {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+
+  inputType      String   
+  originalUrl    String?
+  summaryText    String?
+  outputLang     String?  
+  audioUrl       String?
+  pdfUrl         String?
+
+  createdAt      DateTime @default(now())
+}
