@@ -9,11 +9,11 @@ datasource db {
 }
 
 model User{
-  id String
+  id String @unique
   email String @unique
   name String?
   password String
-  image Stirng
+  image String
   plan String @default("FREE")
   summaries Summary[]
   createdAt DateTime @default(now())
@@ -22,8 +22,8 @@ model User{
 
 
 model Summary {
-  id             String   @id @default(cuid())
-  userId         String
+  id             String   @unique @default(cuid())
+  userId         String   @unique
   user           User     @relation(fields: [userId], references: [id])
 
   inputType      String   
