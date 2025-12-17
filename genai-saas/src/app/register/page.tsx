@@ -6,10 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa"; 
+import { ModeToggle } from "@/components/theme-Toggle";
 
 export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
+         <div className="absolute top-4 right-4">
+            <ModeToggle />
+        </div>
       <Card className="w-full max-w-md space-y-4">
         <CardHeader>
           <h2 className="text-2xl font-bold text-center">Create Account</h2>
