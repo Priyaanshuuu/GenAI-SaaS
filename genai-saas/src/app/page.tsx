@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/theme-Toggle";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6">
       <section className="max-w-3xl text-center space-y-6">
+        <div>
+          <ModeToggle />
+        </div>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Summarize anything.
           <span className="block text-primary">PDFs, Videos, Audio & Links</span>
