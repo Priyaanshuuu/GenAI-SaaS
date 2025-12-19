@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ProcessingModal } from "@/components/dashboard/processing-model";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -14,13 +14,12 @@ export default function UploadPage() {
   const handleGenerate = async () => {
     setLoading(true);
 
-    // fake processing delay
+    // fake processing
     await new Promise((res) => setTimeout(res, 3000));
 
     setLoading(false);
 
-    toast({
-      title: "Summary ready",
+    toast.success("Summary ready", {
       description: "Your content has been processed successfully.",
     });
   };
@@ -43,6 +42,7 @@ export default function UploadPage() {
             accept=".pdf,.mp3,.wav,.mp4,.jpg,.png"
             onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
+
           {file && (
             <p className="text-sm text-green-600">
               Selected file: {file.name}
