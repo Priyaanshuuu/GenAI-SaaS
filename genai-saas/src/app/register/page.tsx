@@ -38,14 +38,14 @@ export default function RegisterPage() {
               <Input type="password" id="password" placeholder="Your password" />
             </div>
 
-            <Button type="submit" className="w-full mt-2">Sign Up</Button>
+            <Button type="submit" className="w-full mt-2 hover:cursor-pointer">Sign Up</Button>
           </form>
 
           <div className="flex items-center justify-center gap-4 pt-2">
             <Button
               variant="outline"
               size="lg"
-              className="flex-1 flex items-center justify-center gap-2"
+              className="flex-1 flex items-center justify-center gap-2 hover:cursor-pointer"
               // onClick={handleGoogleOAuth} // connect later
             >
               <FcGoogle size={20} /> Sign up with Google
@@ -54,7 +54,7 @@ export default function RegisterPage() {
             <Button
               variant="outline"
               size="lg"
-              className="flex-1 flex items-center justify-center gap-2"
+              className="flex-1 flex items-center justify-center gap-2 hover:cursor-pointer"
               // onClick={handleGitHubOAuth} // connect later
             >
               <FaGithub size={20} /> Sign up with GitHub
