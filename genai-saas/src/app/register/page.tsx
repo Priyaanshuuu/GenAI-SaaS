@@ -7,10 +7,12 @@ import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa"; 
 import { ModeToggle } from "@/components/theme-Toggle";
+import {SnowfallEffect} from "@/components/snowfall"
 
 export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
+      < SnowfallEffect/>
          <div className="absolute top-4 right-4">
             <ModeToggle />
         </div>

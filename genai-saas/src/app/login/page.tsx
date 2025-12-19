@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
 import { ModeToggle } from "@/components/theme-Toggle";
+import {SnowfallEffect} from "@/components/snowfall"
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
+      <SnowfallEffect/>
         <div className="absolute top-4 right-4">
             <ModeToggle />
         </div>
