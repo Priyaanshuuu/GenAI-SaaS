@@ -17,6 +17,7 @@ model User {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   summaries Summary[]
+  uploads  Upload[]
 }
 
 model Summary {
@@ -30,5 +31,48 @@ model Summary {
   pdfUrl      String?
   createdAt   DateTime @default(now())
   user        User     @relation(fields: [userId], references: [id])
+  uploadId String?
+  upload   Upload? @relation(fields: [uploadId], references: [id])
+  share     Share[]
+
 }
+
+enum UploadType {
+  PDF
+  VIDEO
+  AUDIO
+  LINK
+}
+
+enum UploadStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+
+model Upload {
+  id          String   @id @default(cuid())
+  userId      String
+  type        UploadType
+  source      String        // file URL / yt link / web URL
+  status      UploadStatus  @default(PENDING)
+  createdAt   DateTime      @default(now())
+
+  user        User          @relation(fields: [userId], references: [id])
+  summaries   Summary[]
+}
+
+ model Share{
+  id         String   @id @default(cuid())
+  slug       String @unique
+  summaryId String  @unique
+  createdAt DateTime @default(now())
+
+  summary Summary @relation(fields: [summaryId] , references: [id])
+ }
+
+ 
+
 
