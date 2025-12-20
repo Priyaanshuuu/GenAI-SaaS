@@ -31,3 +31,4 @@ model Summary {
   createdAt   DateTime @default(now())
   user        User     @relation(fields: [userId], references: [id])
 }
+
